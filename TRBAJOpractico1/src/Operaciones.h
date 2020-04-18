@@ -7,11 +7,11 @@
 
 #ifndef OPERACIONES_H_
 #define OPERACIONES_H_
+
+float SumaDosNumeros(float* pResultado, float num1, float num2);
+float RestaDosNumeros(float* pResultado, float num1, float num2);
+float DivisionDosNumeros(float* pResultado, float num1, float num2);
+float MultiDosNumeros(float* pResultado, int num1, int num2);
+int Factorial1Num(int* pResultado, int num1);
+int Factorial2Num(int* pResultado, int num2);
 #endif /* OPERACIONES_H_ */
-//FIRTMA
-float SumaDosNumeros(float num1, float num2);
-float RestaDosNumeros(float num1, float num2);
-float DivisionDosNumeros(float num1, float num2);
-float MultiDosNumeros(float num1, float num2);
-int Factorial1Num(int num1);
-int Factorial2Num(int num2);

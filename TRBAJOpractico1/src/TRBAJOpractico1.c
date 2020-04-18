@@ -58,7 +58,7 @@ printf("Para una mejor precision numerica se presentan los resultados con dos de
 				printf("\n     Ingrese el segundo numero(B).\n ");
 				scanf("%f", &num2);
 				printf("-------------------------------------------------------\n ");
-				respuestaOp = SumaDosNumeros(num1,num2);
+				SumaDosNumeros(&respuestaOp,num1,num2);
 				printf("\nLa respuesta de la suma(A+B) es de: %.2f\n",respuestaOp);
 			break;
 			case 2:
@@ -71,7 +71,7 @@ printf("Para una mejor precision numerica se presentan los resultados con dos de
 				printf("\n     Ingrese el segundo numero(B).\n ");
 				scanf("%f", &num2);
 				printf("-------------------------------------------------------\n ");
-				respuestaOp = RestaDosNumeros(num1,num2);
+				RestaDosNumeros(&respuestaOp,num1,num2);
 				printf("\nLa respuesta de la resta(A-B) es de: %.2f\n",respuestaOp);
 			break;
 			case 3:
@@ -84,13 +84,12 @@ printf("Para una mejor precision numerica se presentan los resultados con dos de
 				printf("\n     Ingrese el segundo numero(B).\n ");
 				scanf("%f", &num2);
 				printf("-------------------------------------------------------\n ");
-				if(num2 == 0){
-					printf("\nEs imposible la divsion entre 0(CERO)\n");
-					break;
-				}
-				respuestaOp = DivisionDosNumeros(num1,num2);
-				printf("\nLa respuesta de la division(A/B) es de: %.2f\n",respuestaOp);
-			break;
+					if(DivisionDosNumeros(&respuestaOp,num1,num2)!= -1){
+						printf("\nLa respuesta de la division(A/B) es de: %.2f\n",respuestaOp);
+					}else{
+						printf("No se puede dividir por cero. ");
+					}
+				break;
 			case 4:
 				printf("\nUsted eligio una multiplicacion.\n");
 				printf("================================================================================\n ");
@@ -101,7 +100,7 @@ printf("Para una mejor precision numerica se presentan los resultados con dos de
 				printf("\n     Ingrese el segundo numero(B).\n ");
 				scanf("%f", &num2);
 				printf("-------------------------------------------------------\n ");
-				respuestaOp = MultiDosNumeros(num1, num2);
+				MultiDosNumeros(&respuestaOp, num1, num2);
 				printf("\nLa respuesta de la multiplicacion(A*B) es de: %.2f\n",respuestaOp);
 			break;
 			case 5:
@@ -114,8 +113,8 @@ printf("Para una mejor precision numerica se presentan los resultados con dos de
 				printf("\n     Ingrese el segundo numero(B).\n ");
 				scanf("%d", &Numero2);
 				printf("-------------------------------------------------------\n ");
-				respuestaNum1F = Factorial1Num(Numero1);
-				respuestaNum2F = Factorial2Num( Numero2);
+				Factorial1Num(&respuestaNum1F, Numero1);
+				Factorial2Num(&respuestaNum2F, Numero2);
 				printf("\nEl factorial del primer numero(A) es de: %d Y el del segundo(B) es de: %d\n",respuestaNum1F, respuestaNum2F);
 			break;
 		}
